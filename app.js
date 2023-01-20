@@ -52,50 +52,40 @@ function queHacer(queTegustaria)
         
         let nuevoPaciente = 0
         
-        while (nuevoPaciente < 2) 
+        while (nuevoPaciente < 1) 
         {
             let pregunta = new Pacientes(prompt("ingrese su DNI"),
                                         prompt("Ingrese su Nombre"),
                                         prompt("Ingrese su Apellido"),
                                         prompt("Ingrese su Edad"))
 
-        if (id == "", nombre == "", apellido == "", edad =="") 
-        {
-        alert("por favor ingresa los datos correctamente");
-        nuevoPaciente= 1;
-        }
-
-        else 
-        {
-        alert("datos correctos puede continuar")
-        nuevoPaciente= 2;
-        }
+        
         pacientes.push(pregunta)
         nuevoPaciente++
         }
+        console.log(pacientes)
         return;
+        
 
         case "2":
-        return pacientes.forEach(element => console.log(element));
+        
+        pacientes.forEach(element => console.log(element));
+        return;
 
         case "3":
-          pregunta = prompt("indique el nombre del paciente que decea buscar")
-        const info = pacientes.find((element) => element.nombre.includes(pregunta))
+          pregunta2 = prompt("indique el nombre del paciente que decea buscar")
+        const info = pacientes.filter((element) => element.nombre.includes(pregunta2))
        
         console.log(info);
         return
         
         case "4":
-            const info2 = pacientes.map((element)=>{  //creamos la variable
-                return {
-                    nombre: element4.edad //buscamos lavariable y decimos que la muestre en mayusculas
-                }
-            })
-            
-            console.log(info2)
 
+        pregunta3 = prompt("indique rango de edad del paciente que decea buscar")
+        const info2 = pacientes.filter((element) => element.edad >= (pregunta3))
 
-            break;
+        console.log(info2);
+        return
     
         default:
             break;
